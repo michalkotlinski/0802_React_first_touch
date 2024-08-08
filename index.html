@@ -4,8 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>React_first_touch</title>
+    <script defer src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script defer src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script defer src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
 <body>
-    
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const exampleReactElement = <h1>Hello world!</h1>;
+        ReactDOM.render(exampleReactElement, document.getElementById('root'));
+    </script>
 </body>
 </html>
