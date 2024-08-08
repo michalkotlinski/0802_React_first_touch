@@ -12,8 +12,33 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        const exampleReactElement = <h1>Hello world!</h1>;
-        ReactDOM.render(exampleReactElement, document.getElementById('root'));
+        /*const name = "Michał";
+        const buttonAttributes = {
+            className: "jakasKlasa",
+            disabled: true,
+        };
+
+        const exampleReactElement = (
+            <div>
+                <h1 className="nazwaKlasy">Hello {name.toUpperCase()}!</h1>
+                <button disabled={true}>Wyłączony przycisk</button>
+                <button disabled={false}>Włączony przycisk</button>
+                <button {...buttonAttributes}>Przycisk wyłaczony - zapisany w JSX</button>
+            </div>
+        );*/
+
+        const Hello = (props) => (
+            <h1>Cześć {props.name}!</h1>
+        )
+        const element = <Hello name="Michał" />;
+        ReactDOM.render(element, document.getElementById('root'));
+
+        /*const element1 = <div className="klasa1">Treść</div>;
+        ReactDOM.render(element1, document.getElementById('root'));
+
+        const element2 = <div className="klasa2">Treść</div>;
+        ReactDOM.render(element2, document.getElementById('root'));
+        /*ReactDOM.render(exampleReactElement, document.getElementById('root'));*/
     </script>
 </body>
 </html>
