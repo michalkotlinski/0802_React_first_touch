@@ -27,11 +27,18 @@
             </div>
         );*/
 
-        const Hello = (props) => (
+        /*const Hello = (props) => (
             <h1>Cześć {props.name}!</h1>
         )
         const element = <Hello name="Michał" />;
-        ReactDOM.render(element, document.getElementById('root'));
+        ReactDOM.render(element, document.getElementById('root'));*/
+
+        /*powyższy komponent z destrukturyzcją
+        const Hello1 = ({ name }) => (
+            <h1>Cześć {name}!</h1>
+        )
+        const element2 = <Hello1 name = "Michu destrukturyzowany"/>;
+        ReactDOM.render(element2, document.getElementById('root'));*/
 
         /*const element1 = <div className="klasa1">Treść</div>;
         ReactDOM.render(element1, document.getElementById('root'));
@@ -39,6 +46,32 @@
         const element2 = <div className="klasa2">Treść</div>;
         ReactDOM.render(element2, document.getElementById('root'));
         /*ReactDOM.render(exampleReactElement, document.getElementById('root'));*/
+
+        /*renderowanie warunkowe komponentu*/
+        const Hello = ({name}) => (
+            <h1>Cześć {name ? name : "nieznajomy/a"}</h1>
+        )
+        
+            const element = (
+            <div>
+            <Hello name="Krzychu" />
+            <Hello />
+            </div>
+            );
+            ReactDOM.render(element, document.getElementById('root'));
+         /*to samo z potrójnym (ternary) operatorem
+         const HelloD = ({name}) => {
+            return (
+                <h1>Cześć {props.name ? props.name : "nieznajomy/a"}</h1>
+            );
+         }*/
+         /*operator || (or) zwraca truthy po lewej stronie*/
+         const HelloOR = (props) => {
+            return (
+                <h1>Cześć {props.name || "nieznajome"}</h1>
+            );
+            ReactDOM.render(HelloOR, document.getElementById('root'));
+         };
     </script>
 </body>
 </html>
