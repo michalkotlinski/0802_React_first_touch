@@ -47,17 +47,12 @@
         ReactDOM.render(element2, document.getElementById('root'));
         /*ReactDOM.render(exampleReactElement, document.getElementById('root'));*/
 
-        /*renderowanie warunkowe komponentu*/
+        /*renderowanie warunkowe komponentu
         const Hello = ({name}) => (
             <h1>Cześć {name ? name : "nieznajomy/a"}</h1>
         )
         
-            const element = (
-            <div>
-            <Hello name="Krzychu" />
-            <Hello />
-            </div>
-            );
+            
             ReactDOM.render(element, document.getElementById('root'));
          /*to samo z potrójnym (ternary) operatorem
          const HelloD = ({name}) => {
@@ -65,13 +60,66 @@
                 <h1>Cześć {props.name ? props.name : "nieznajomy/a"}</h1>
             );
          }*/
-         /*operator || (or) zwraca truthy po lewej stronie*/
-         const HelloOR = (props) => {
+         /*operator || (or) zwraca truthy po lewej stronie
+         const Hello = ({name}) => {
             return (
-                <h1>Cześć {props.name || "nieznajome"}</h1>
+                <h1>Cześć {name || "nieznajomy/a"}</h1>
             );
-            ReactDOM.render(HelloOR, document.getElementById('root'));
-         };
+            };
+            const element = (
+            <div>
+            <Hello name="Krzychu" />
+            <Hello />
+            </div>
+            );
+            ReactDOM.render(element, document.getElementById('root'));*/
+            /*&&*/
+         /*const Hello = ({name}) => {
+            return !!name && (
+                    <h1>Cześć {name}!</h1>
+                )
+            /*powyższe równoznaczne z:
+            if (name) {
+                return (
+                <h1>Witaj {name}!</h1>
+                );
+         }
+                return false;
+         
+         const element = (
+            <div>
+            <Hello name="Krzychu" />
+            <Hello name="Michu" />
+            </div>
+            );*/
+            
+    /*tablice w jsx*/
+    const ProductList = ({products}) => (
+        <React.Fragment>
+            <h1>Lista produktów</h1>
+        <ul>
+            {products.map(({id, name}) =>(
+                <li key={id}>{name}</li>
+            ))}
+        </ul>
+        </React.Fragment>
+    )
+    /*tablica obiektów*/
+    const products = [
+        {id: 4, name: "gumka"},
+        {id: 6, name: "głosniki"},
+    ];
+     const element = (
+        <ProductList
+            products={products}
+            />
+
+        
+     );
+
+     /*fragments*/
+
+     ReactDOM.render(element, document.getElementById('root'));   
     </script>
 </body>
 </html>
